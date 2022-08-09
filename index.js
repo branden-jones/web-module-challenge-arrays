@@ -45,13 +45,46 @@ Use the copy function below to do the following:
   2. Return a copy of the received array  
 */
 
-
-function copy(/*your code here*/){
+function copy(){
   /*your code here*/
-  const copyFlavors = [...originalFlavors];
-console.log(copyFlavors);
+  const originalFlavors = [
+    "Banana Nut Fudge",
+    "Black Walnut",
+    "Burgundy Cherry",
+    "Butterscotch Ribbon",
+    "Cherry Macaron",
+    "Chocolate",
+    "Chocolate Almond",
+    "Chocolate Chip",
+    "Chocolate Fudge",
+    "Chocolate Mint",
+    "Chocolate Ribbon",
+    "Coffee",
+    "Coffee Candy",
+    "Date Nut",
+    "Eggnog",
+    "French Vanilla",
+    "Green Mint Stick",
+    "Lemon Crisp",
+    "Lemon Custard",
+    "Lemon Sherbet",
+    "Maple Nut",
+    "Orange Sherbet",
+    "Peach",
+    "Peppermint Fudge Ribbon",
+    "Peppermint Stick",
+    "Pineapple Sherbet",
+    "Raspberry Sherbet",
+    "Rocky Road",
+    "Strawberry",
+    "Vanilla",
+    "Vanilla Burnt Almond"
+  ]
+  for(let i = 0; i < 31; i++)
+  copyFlavors=[originalFlavors[i]];
+  return copyFlavors;
 }
-copy();
+console.log(copy);
 
 
 
@@ -66,10 +99,16 @@ For Example: is31Flavors(originalFlavors) will return true if your code is worki
 */
 
 
-function is31Flavors(/*your code here*/){
+function is31Flavors(array){
   /*your code here*/
- }
-
+  const copyOriginal = copy(originalFlavors);
+  if(copyOriginal.length === 31) {
+ return('true');
+  } else {
+    return('false');
+  }; console.log(copyOriginal.length);
+};
+is31Flavors();
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
