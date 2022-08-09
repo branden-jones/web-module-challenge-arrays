@@ -80,11 +80,11 @@ function copy(){
     "Vanilla",
     "Vanilla Burnt Almond"
   ]
-  for(let i = 0; i < 31; i++)
-  copyFlavors=[originalFlavors[i]];
+  copyFlavors=[...originalFlavors];
   return copyFlavors;
 }
-console.log(copy);
+console.log(copy());
+console.log(copyFlavors);
 
 
 
@@ -101,14 +101,18 @@ For Example: is31Flavors(originalFlavors) will return true if your code is worki
 
 function is31Flavors(array){
   /*your code here*/
-  const copyOriginal = copy(originalFlavors);
-  if(copyOriginal.length === 31) {
- return('true');
-  } else {
-    return('false');
-  }; console.log(copyOriginal.length);
+  if(array.length < 31){
+    return 'false';
+    console.log('false');
+  } else if(array.length > 31){
+    return 'false';
+    console.log('false');
+  } else{
+    return 'true';
+    console.log('true');
+  }
 };
-is31Flavors();
+console.log(is31Flavors(copyFlavors));
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
