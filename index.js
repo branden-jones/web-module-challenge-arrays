@@ -45,46 +45,14 @@ Use the copy function below to do the following:
   2. Return a copy of the received array  
 */
 
-function copy(){
+function copy(array) {
   /*your code here*/
-  const originalFlavors = [
-    "Banana Nut Fudge",
-    "Black Walnut",
-    "Burgundy Cherry",
-    "Butterscotch Ribbon",
-    "Cherry Macaron",
-    "Chocolate",
-    "Chocolate Almond",
-    "Chocolate Chip",
-    "Chocolate Fudge",
-    "Chocolate Mint",
-    "Chocolate Ribbon",
-    "Coffee",
-    "Coffee Candy",
-    "Date Nut",
-    "Eggnog",
-    "French Vanilla",
-    "Green Mint Stick",
-    "Lemon Crisp",
-    "Lemon Custard",
-    "Lemon Sherbet",
-    "Maple Nut",
-    "Orange Sherbet",
-    "Peach",
-    "Peppermint Fudge Ribbon",
-    "Peppermint Stick",
-    "Pineapple Sherbet",
-    "Raspberry Sherbet",
-    "Rocky Road",
-    "Strawberry",
-    "Vanilla",
-    "Vanilla Burnt Almond"
-  ]
-  copyFlavors=[...originalFlavors];
-  return copyFlavors;
-}
-console.log(copy());
-console.log(copyFlavors);
+  const copy1 = [...array];
+  return copy1;
+};
+// console.log(copy(originalFlavors));
+const copyOfFlavors = copy(originalFlavors);
+console.log(copyOfFlavors);
 
 
 
@@ -101,19 +69,15 @@ For Example: is31Flavors(originalFlavors) will return true if your code is worki
 
 function is31Flavors(array){
   /*your code here*/
-  if(array.length < 31){
-    return 'false';
-    console.log('false');
-  } else if(array.length > 31){
-    return 'false';
-    console.log('false');
-  } else{
-    return 'true';
-    console.log('true');
+  if(array.length === 31) {
+    return true;
+  } else {
+    return false;
   }
 };
-console.log(is31Flavors(copyFlavors));
-
+is31Flavors(copyOfFlavors);
+console.log(is31Flavors(copyOfFlavors));
+console.log(is31Flavors(originalFlavors));
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Corporate has come to you with an idea for a new flavor: Rainbow Sherbert! They think this will be a game changer. You need to modify the array to include this flavor. 
@@ -128,9 +92,12 @@ Use the addFlavor function below to do the following:
 */
 
 
-function addFlavor(/*your code here*/){
-  /*your code here*/
- }
+function addFlavor(array, string){
+  array.unshift(string);
+  return array;
+ };
+const updatedFlavors = addFlavor(copyOfFlavors, 'lobster');
+console.log(updatedFlavors);
 
 
 
@@ -146,10 +113,15 @@ Use the removeLastFlavor function below to do the following:
 */
 
 
-function removeLastFlavor(/*your code here*/){
- /*your code here*/
-}
-
+// function removeLastFlavor(/*your code here*/){
+//  /*your code here*/
+// }
+function removeLastFlavor(array){
+  array.pop;
+  return array;
+ };
+ const readyFlavors = removeLastFlavor(updatedFlavors);
+ console.log(readyFlavors);
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -164,11 +136,14 @@ Use the getFlavorByIndex function below to do the following:
 */
 
 
-function getFlavorByIndex(/*your code here*/){
-  /*your code here*/
-}
-
-
+// function getFlavorByIndex(/*your code here*/){
+//   /*your code here*/
+// }
+function getFlavorByIndex(array,index){
+  return array[index];
+};
+let indexAnswer = getFlavorByIndex(readyFlavors, 24)
+console.log(indexAnswer);
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 As corporate wants to add more and more flavors to their lineup, they've realized that they need to remove flavors based on flavor name, as opposed to just arbitrarily removing the first or last flavor. Your task is to get an index by flavor name, and remove that single flavor from the array.  
@@ -184,9 +159,12 @@ Use the removeFlavorByName function below to do the following:
   HINT: You can use .splice() for this
 */
 
-function removeFlavorByName(/*your code here*/){
-  /*your code here*/
-}
+function removeFlavorByName(array, string) {
+  const oldFlavor = array.indexOf(string);
+  array.splice(oldFlavor, 1);
+  return array;
+};
+console.log(removeFlavorByName(readyFlavors,'Peppermint Fudge Ribbon'));
 
 
 
@@ -209,9 +187,15 @@ Use the filterByWord function below to do the following:
 */
 
 
-function filterByWord(/*your code here*/){
-  /*your code here*/
-}
+function filterByWord(array,string){
+  const holidayMenu = [];
+  for(let i = 0; i < array.length; i++) {
+    if(array[i].includes(string)) {
+      holidayMenu.push(array[i]);
+    }; 
+  };return holidayMenu;
+};
+console.log(filterByWord(originalFlavors,'Chocolate'));
 
 
 
